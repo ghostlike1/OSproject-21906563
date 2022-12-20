@@ -80,3 +80,67 @@ int main(int argc, char *argv[])
         }
     }
 }
+// No process in the queue, queue is empty
+
+if (size == 0)
+
+{
+
+    goto empty_queue;
+}
+
+printf("Schdeuling Algorithm: ");
+
+// First-Come-First-Serve
+
+if (!strcmp(argv[2], "FCFS"))
+{
+
+    {
+
+        printf("FCFSn");
+
+        fcfs(size, pid, burst_time, arrival_time);
+    }
+
+    else if (!strcmp(argv[2], "RR"))
+
+    {
+
+        if (argc == 4)
+
+        {
+
+            printf("RRn");
+
+            quantum = atoi(argv[3]);
+
+            rr(size, pid, burst_time, arrival_time, quantum);
+        }
+
+        else
+
+        {
+
+            printf("...n Invalid Entryn");
+        }
+    }
+
+    else if (!strcmp(argv[2], "SRTF"))
+
+    {
+
+        printf("SRTFn");
+
+        srtf(size, pid, burst_time, arrival_time);
+    }
+
+    else
+
+    {
+
+        printf("USAGE: FCFS, RR, SRTFn");
+    }
+}
+
+/* end of run */
