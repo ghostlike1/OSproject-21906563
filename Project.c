@@ -144,3 +144,61 @@ if (!strcmp(argv[2], "FCFS"))
 }
 
 /* end of run */
+
+return 0;
+
+empty_queue : printf("nProcess queue is empty. End of run.n");
+{
+}
+
+// SRTF: To implement shortest run-time first
+
+void srtf(int size, int pid[], int burst_time[], int arrival_time[])
+
+    int i,
+    j, n, k, time, result;
+
+int temp_burst[size], waiting[size], response_time[size];
+
+int turnaround_time[size], wait_time[size];
+
+float float_result;
+
+bool done, processed[size];
+
+// Duplicates burst_time array
+
+copy_array(size, burst_time, temp_burst);
+
+printf("Total of %d tasks are read. Press 'enter' to start...", size);
+
+getchar();
+
+printf("==================================================================n");
+
+// Initializes all processed to false
+
+for (i = 0; i < size; ++i)
+
+{
+
+    processed[i] = false;
+}
+
+// Initializes the response time
+
+for (i = 0; i < size; ++i)
+
+{
+
+    response_time[i] = -1;
+}
+
+// Initializes the wait time
+
+for (i = 0; i < size; ++i)
+
+{
+
+    wait_time[i] = 0;
+}
